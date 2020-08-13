@@ -22,4 +22,7 @@ public class Course {
 
     private String name;
     private int durationMonths;
+
+    public void setId(int i) {
+    }
 }

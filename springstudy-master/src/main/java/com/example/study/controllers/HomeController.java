@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  * @author Vinod John
  */
+
+/*Controller is responsible for REST requests. It connects the front-end with Java.
+* @Controller -> ThymeLeaf, @RestController -> Angular and others*/
 @Controller
 @RequestMapping("/")
 public class HomeController {
     @GetMapping
     public String showHomePage(Model model, @ModelAttribute("message") String message,
-                               @ModelAttribute("messageType") String messageType) {
+                                            @ModelAttribute("messageType") String messageType) {
         boolean isLoggedIn = false;
 
         if (messageType.equals("success")) {

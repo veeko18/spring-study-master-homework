@@ -8,9 +8,7 @@ import com.example.study.services.SchoolService;
 import com.example.study.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.PostConstruct;
-import java.util.UUID;
 
 /**
  * Data Init component
@@ -33,27 +31,27 @@ public class DataInit {
         initCourse();
     }
 
-        // PRIVATE METHODS //
-        private void initUserData () {
-            User user = new User();
-            user.setUsername("veeko2018@gmail.com");
-            user.setPassword("Password123@");
+    // PRIVATE METHODS //
+    private void initUserData() {
+        User user = new User();
+        user.setUsername("veeko2018@gmail.com");
+        user.setPassword("Password123@");
 
-            if (userService.findUserByUsername(user.getUsername()).isEmpty()) {
-                userService.createUser(user);
-            }
+        if (userService.findUserByUsername(user.getUsername()).isEmpty()) {
+            userService.createUser(user);
         }
+    }
 
-        private void initSchoolData () {
-            School school = new School();
-            school.setName("Software Development Academy");
-            school.setCity("Tallinn");
-            school.setPhone("+555-000-111");
+    private void initSchoolData() {
+        School school = new School();
+        school.setName("Software Development Academy");
+        school.setCity("Tallinn");
+        school.setPhone("+555-000-111");
 
-            if (schoolService.findSchoolByName(school.getName()).isEmpty()) {
-                schoolService.createSchool(school);
-            }
+        if (schoolService.findSchoolByName(school.getName()).isEmpty()) {
+            schoolService.createSchool(school);
         }
+    }
 
     private void initCourse() {
 
@@ -66,3 +64,4 @@ public class DataInit {
             courseService.createCourse(course);
         }
     }
+}

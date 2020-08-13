@@ -4,18 +4,18 @@ import com.example.study.models.Course;
 import com.example.study.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class CourseServiceImpl implements CourseService {
+
     @Autowired
     private CourseService courseService;
 
     @Override
     public void createCourse(Course course) {
-
+        //what logic to put here?
     }
 
     @Override
@@ -28,5 +28,8 @@ public class CourseServiceImpl implements CourseService {
         return null;
     }
 
-
+    @Override
+    public boolean isCourseAdded(Course course) {
+        return false;
+    }
 }

@@ -13,11 +13,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class LoginServiceImpl implements LoginService {
+
     @Autowired
     private UserService userService;
 
     @Override
     public boolean isLoginValid(Login login) {
-        return userService.findByUsernameAndPassword(login.getUsername(), login.getPassword()).isPresent();
+        return userService.findByUsernameAndPassword(login.getUsername(), login.getPassword())
+                .isPresent();
     }
 }

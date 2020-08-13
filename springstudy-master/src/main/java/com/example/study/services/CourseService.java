@@ -1,8 +1,6 @@
 package com.example.study.services;
 
 import com.example.study.models.Course;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,6 +15,7 @@ public interface CourseService {
     //display list of courses
     List<Course> displayListOfCourses(List<Course> courses);
 
+    boolean isCourseAdded(Course course);
 }
 
 
